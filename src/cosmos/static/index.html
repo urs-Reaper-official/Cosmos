@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#172521">
+    <title>COSMOS | Conversation</title>
+    <link rel="icon" href="/static/cosmos.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/app.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-frame">
+      <aside class="sidebar" id="sidebar" aria-label="Conversation sidebar">
+        <a class="brand" href="/" aria-label="COSMOS home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 96 96" fill="none"><circle cx="48" cy="48" r="37" stroke="currentColor" stroke-width="3" opacity=".34"/><path d="M65.5 28.5C60.8 24.9 55 23 48.5 23 34.4 23 23 34.4 23 48.5S34.4 74 48.5 74c6.5 0 12.3-1.9 17-5.5" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="m48 34.5 3.8 10.2L62 48.5l-10.2 3.8L48 62.5l-3.8-10.2L34 48.5l10.2-3.8L48 34.5Z" fill="currentColor"/><circle cx="70" cy="29" r="4" fill="currentColor"/></svg></span>
+          <span class="brand-copy"><strong>COSMOS</strong><small>SUPER INTELLIGENCE</small></span>
+        </a>
+
+        <button class="new-chat" id="new-chat" type="button"><span aria-hidden="true">+</span> New conversation</button>
+
+        <div class="sidebar-heading"><span>YOUR SPACE</span><span class="sidebar-rule"></span></div>
+        <nav class="conversation-list" id="conversation-list" aria-label="Recent conversations"></nav>
+        <p class="empty-history" id="empty-history">Your conversations will appear here.</p>
+
+        <div class="sidebar-bottom">
+          <label class="memory-control" for="remember-history">
+            <span class="memory-copy"><strong>Remember on this device</strong><small>Saved only in this browser</small></span>
+            <input id="remember-history" type="checkbox" aria-label="Remember conversations on this device">
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+          <button class="clear-history" id="clear-history" type="button">Clear device history</button>
+          <div class="profile-row"><span class="profile-mark">C</span><span><strong>COSMOS</strong><small>Local workspace</small></span><span class="profile-state" aria-hidden="true"></span></div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <button class="mobile-history" id="mobile-history" type="button" aria-expanded="false" aria-controls="sidebar">History</button>
+          <div class="conversation-heading"><span class="eyebrow">CONVERSATION</span><h1 id="conversation-title">New conversation</h1></div>
+          <div class="model-status" id="model-status" role="status"><span class="status-dot"></span><span id="model-status-text">Checking model</span></div>
+        </header>
+
+        <section class="chat-scroll" id="chat-scroll" aria-label="Chat messages">
+          <div class="welcome" id="welcome">
+            <div class="welcome-mark" aria-hidden="true"><span>&#10022;</span></div>
+            <p class="welcome-eyebrow"><span class="welcome-line"></span> A CLEARER WAY FORWARD</p>
+            <h2>What are we<br><em>working on?</em></h2>
+            <p class="welcome-copy">Bring a question, a rough idea, or a knotty problem. We can work through it together.</p>
+            <div class="suggestions" aria-label="Suggested prompts">
+              <button type="button" class="suggestion" data-prompt="Help me turn a rough idea into a practical plan."><span class="suggestion-index">01</span><span>Shape an idea into a plan</span><span aria-hidden="true">&#8599;</span></button>
+              <button type="button" class="suggestion" data-prompt="Explain a difficult topic in clear, simple terms."><span class="suggestion-index">02</span><span>Make a complex topic clear</span><span aria-hidden="true">&#8599;</span></button>
+              <button type="button" class="suggestion" data-prompt="Help me compare a few options and make a decision."><span class="suggestion-index">03</span><span>Think through a decision</span><span aria-hidden="true">&#8599;</span></button>
+            </div>
+          </div>
+          <div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+        </section>
+
+        <section class="composer-area" aria-label="Write a message">
+          <form class="composer" id="composer">
+            <label class="visually-hidden" for="message-input">Message COSMOS</label>
+            <textarea id="message-input" name="message" rows="1" maxlength="6000" placeholder="Message COSMOS..." required></textarea>
+            <div class="composer-bottom"><span class="input-hint">Enter to send <span aria-hidden="true">&middot;</span> Shift+Enter for a new line</span><button class="send-button" id="send-button" type="submit"><span>Send</span><span aria-hidden="true">&#8594;</span></button></div>
+          </form>
+          <p class="privacy-note">Model inference runs locally. Device history is optional and stays in this browser.</p>
+        </section>
+      </main>
+    </div>
+    <div class="mobile-backdrop" id="mobile-backdrop"></div>
+  </body>
+</html>

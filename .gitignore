@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+node_modules/
+.next/
+*.tsbuildinfo
+out/
+coverage/
+.env
+.env.*
+!.env.example
